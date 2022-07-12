@@ -1,0 +1,124 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftNav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.3rem;
+    width: 60%;
+    min-width: 300px;
+}
+
+.rightNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.rightNav span {
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.767);
+    cursor: pointer;
+}
+
+.rightNav span:hover{
+    border:none;	
+    outline:none;
+    border-bottom:1px solid #e74c3c;	
+    color: white;
+}
+
+.icon {
+    padding: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.input-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+	position:relative;
+	margin-bottom:25px;
+    width: 100%;
+}
+
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width: 100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color: rgba(255, 255, 255, 0.767);
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+
+
+
+.mobileNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e74c3c;
+    position: absolute;
+    right: -400px;
+    height: 100vh;
+    min-width: 400px;
+    z-index: 10;
+    top: 0;
+    transition: right 2s;
+    transition-timing-function: linear 1s;
+}
+
+.logo{
+    color: #e74c3c;
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    
+}
+
+.mobileNav span{
+    color: white;
+    margin: 0.5rem;
+}
+
+.hidden, .mobileBar {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .mobileNav {
+        right: 0;
+    }
+
+    .rightNav{
+        display: none;
+    }
+
+    .mobileBar {
+        display: block;
+        color: white;
+        margin-right: 0.5rem;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 576px){
+    .mobileNav {
+        right: 0;
+        min-width: 100vw;
+    }
+}
