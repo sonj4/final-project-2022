@@ -10,7 +10,7 @@ function CarouselFadeExample() {
   const titleStyle = {
     color: "white",
     fontFamily: "'Poppins', sans-serif",
-    textShadow: "0px 0px 8px rgba(255, 0, 0, 0.83)"
+    
   }
 
   const carouselStyle = {

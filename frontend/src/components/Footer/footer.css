@@ -1,0 +1,33 @@
+footer{
+    background-color: #c20b14;
+    color: #fffffc;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    font-size: 0.8rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title{
+    font-size: 1rem;
+    color: #fffffc;
+    border-bottom: 1px solid #fffffc;
+    padding: 0.3rem;
+}
+
+.footerIcon{
+    width: 1.4rem;
+    height: 1.4rem;
+    color: #96b19f;
+    cursor: pointer;
+    margin: 0.3rem;
+}
