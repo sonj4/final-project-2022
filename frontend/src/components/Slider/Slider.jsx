@@ -22,19 +22,51 @@ export default function Slider() {
     {
       id: "2", title: "Movie 1",
       image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    },
+    {
+      id: "2", title: "Movie 1",
+      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    },
+    {
+      id: "2", title: "Movie 1",
+      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    },
+    {
+      id: "2", title: "Movie 1",
+      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     }
   ]
   return (
     
       <div className='wrapper'>
-        <h3 className='popularTitle'>Popular:</h3>
+        <h3 className='popularTitle'>Popular movies:</h3>
         <Splide options={{
-          perPage: 3,
+          perPage: 6,
           arrows: false,
           pagination: false,
           drag: 'free',
-          gap: "3rem",
-          dataSplideInterval: "1000"
+          gap: "20rem",
+          dataSplideInterval: "1000",
+          breakpoints: {
+            1200: {
+              perPage: 4,
+          
+            },
+            992: {
+              perPage: 3,
+        
+            },
+            768: {
+              perPage: 3,
+        
+            },576: {
+              perPage: 2,
+        
+            },360: {
+              perPage: 1,
+        
+            }
+          }
         }}>
           {popular.map(recipe => {
             return (

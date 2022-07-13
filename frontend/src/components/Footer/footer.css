@@ -1,5 +1,5 @@
 footer{
-    background-color: #c20b14;
+    background-color: #010001;
     color: #fffffc;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -11,6 +11,7 @@ footer{
 }
 
 .container{
+    margin: 1rem 0.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +28,40 @@ footer{
 .footerIcon{
     width: 1.4rem;
     height: 1.4rem;
-    color: #96b19f;
+    color: white;
     cursor: pointer;
     margin: 0.3rem;
+}
+
+.socialContainer{
+    background-color: rgba(34,3,49,0.75);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    box-shadow: -1px 1px 10px 9px rgba(34,3,49,0.75);
+    -web-kit-box-shadow: -1px 1px 34px 9px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 1px 34px 9px rgba(0,0,0,0.75);
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px)  {
+    footer {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

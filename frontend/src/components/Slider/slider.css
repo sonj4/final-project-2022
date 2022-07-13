@@ -2,7 +2,7 @@
     margin-top: 2rem;
     padding: 4rem;
     width: 100vw;
-    background-color: rgb(255, 255, 255);
+    border-top: 5px solid #373636;
 }
 
 
@@ -56,7 +56,11 @@
 
 .popularTitle{
     font-size: 2rem;
-    color: #c20b14;
+    color: #ffffff;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem ;
+    font-weight: 400;
+    text-shadow: 2px 2px 8px #7F8A9C;
     
 }
 

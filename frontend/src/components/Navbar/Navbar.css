@@ -1,3 +1,5 @@
+
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -29,7 +31,7 @@ nav{
 .rightNav span:hover{
     border:none;	
     outline:none;
-    border-bottom:1px solid #e74c3c;	
+    border-bottom:1px solid #220331;	
     color: white;
 }
 
@@ -51,7 +53,7 @@ nav{
 
 .input-container input{ 
   border:0;
-  border-bottom:1px solid #555;  
+  border-bottom: 1px solid #220331;  
   background:transparent;
   width: 100%;
   padding:8px 0 5px 0;
@@ -61,7 +63,7 @@ nav{
 .input-container input:focus{ 
  border:none;	
  outline:none;
- border-bottom:1px solid #e74c3c;	
+ border-bottom:1px solid rgb(34, 3, 49);	
 }
 
 
@@ -71,7 +73,7 @@ nav{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #e74c3c;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(34, 3, 49) 50%, rgba(0,0,0,1) 100%);
     position: absolute;
     right: -400px;
     height: 100vh;
@@ -79,11 +81,10 @@ nav{
     z-index: 10;
     top: 0;
     transition: right 2s;
-    transition-timing-function: linear 1s;
 }
 
 .logo{
-    color: #e74c3c;
+    color: #c0e8f9;
     font-size: 1.8rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -102,6 +103,7 @@ nav{
 @media (max-width: 992px) {
     .mobileNav {
         right: 0;
+        transition: right 2s;
     }
 
     .rightNav{
@@ -119,6 +121,7 @@ nav{
 @media (max-width: 576px){
     .mobileNav {
         right: 0;
+        transition: right 2s;
         min-width: 100vw;
     }
 }
