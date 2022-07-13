@@ -1,0 +1,39 @@
+.notFoundContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.notFoundTitle{
+    font-size: 5rem;
+    color: white;
+    letter-spacing: 0.4rem;
+    font-weight: 500;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+
+}
+
+.notFoundParagraph404{
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+
+}
+
+.notFoundParagraph{
+    color: #beb7a4;
+}
+
+.notFoundButton{
+    color: white;
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid white;
+    transition:all 1s ease-in-out;
+}
+ 
+.notFoundButton:hover{
+    background-color: rgba(0, 0, 0, 0.68);
+}

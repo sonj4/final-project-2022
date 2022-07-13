@@ -6,7 +6,7 @@ import './Home.css';
 export default function Home() {
   return (
     <div className='home'>
-      <CarouselFadeExample/>
+      <CarouselFadeExample />
       <Slider />
       <Slider />
     </div>

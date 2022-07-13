@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faImage, faSearch, faBars, faImagePortrait, faClose } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBars, faImagePortrait, faClose } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css';
 import MenuUI from '../MenuUI';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 
@@ -15,31 +16,29 @@ export default function Navbar() {
   return (
     <nav>
       <div className="leftNav">
-        <div class="input-container">
-        <span className='logo'>IMDB</span>
-          <MenuUI/>
+        <div className="input-container">
+          <Link to='/' style={{ textDecoration: 'none' }}><span className='logo'>IMDB</span></Link> 
+          <MenuUI />
           <input type="text" required="" placeholder='Search' />
           <FontAwesomeIcon icon={faSearch} className="icon" />
         </div>
       </div>
       <div className="rightNav">
-        <span>ABOUT</span>
-        <span>CONTACT</span>
         <span>WATCHLIST</span>
-        <span>SIGN IN</span>
+        <span>ABOUT</span>
+        <Link to='/login' style={{ textDecoration: 'none' }}><span>LOG IN</span></Link> 
         <FontAwesomeIcon icon={faImagePortrait} className="icon" />
-        
+
       </div>
-      <FontAwesomeIcon icon={faBars} className="mobileBar hidden" onClick={(e) => handleClick(e)}/>
+      <FontAwesomeIcon icon={faBars} className="mobileBar hidden" onClick={(e) => handleClick(e)} />
       <div className={isClicked ? "mobileNav" : "mobileNav hidden"}>
-        <FontAwesomeIcon icon={faClose} className="icon" onClick={(e) => handleClick(e)}/>
-        <span>ABOUT</span>
-        <span>CONTACT</span>
+        <FontAwesomeIcon icon={faClose} className="icon" onClick={(e) => handleClick(e)} />
         <span>WATCHLIST</span>
-        <span>SIGN IN</span>
+        <span>ABOUT</span>
+        <Link to='/login' style={{ textDecoration: 'none' }}><span>LOG IN</span></Link> 
         <FontAwesomeIcon icon={faImagePortrait} className="icon" />
       </div>
-      
+
     </nav>
   )
 }

@@ -1,8 +1,9 @@
-footer{
+footer {
     background-color: #010001;
     color: #fffffc;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -10,7 +11,23 @@ footer{
     font-size: 0.8rem;
 }
 
-.container{
+.c1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.c2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.c3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.c4 {
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+.container {
     margin: 1rem 0.3rem;
     display: flex;
     flex-direction: column;
@@ -18,14 +35,14 @@ footer{
     justify-content: space-between;
 }
 
-.title{
+.title {
     font-size: 1rem;
     color: #fffffc;
     border-bottom: 1px solid #fffffc;
     padding: 0.3rem;
 }
 
-.footerIcon{
+.footerIcon {
     width: 1.4rem;
     height: 1.4rem;
     color: white;
@@ -33,35 +50,43 @@ footer{
     margin: 0.3rem;
 }
 
-.socialContainer{
-    background-color: rgba(34,3,49,0.75);
+.socialContainer {
+
     border-radius: 1rem;
     padding: 0.5rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
-    text-align: justify;
-    box-shadow: -1px 1px 10px 9px rgba(34,3,49,0.75);
-    -web-kit-box-shadow: -1px 1px 34px 9px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 1px 34px 9px rgba(0,0,0,0.75);
+    align-content: center;
 }
 
-@media (max-width: 992px) and (min-width: 768px){
-    footer {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
-@media (max-width: 767px) and (min-width: 576px) {
-    footer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 576px)  {
+@media (max-width: 576px) {
     footer {
         grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .c1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .c2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .c3 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .c4 {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    .socialContainer {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

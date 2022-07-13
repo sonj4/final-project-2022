@@ -25,14 +25,14 @@ function CarouselFadeExample() {
     zIndex: "3",
     position: "absolute",
     width: "100%",
-    height:" 100%",
+    height: " 100%",
     background: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5))"
   }
 
   return (
     <Carousel fade style={carouselStyle}>
       <Carousel.Item>
-      <div style={gradient} />
+        <div style={gradient} />
         <img
           className="d-block "
           style={mystyle}
@@ -43,10 +43,10 @@ function CarouselFadeExample() {
           <h2>Peaky Blinders</h2>
           <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
-        
+
       </Carousel.Item>
       <Carousel.Item>
-      <div style={gradient} />
+        <div style={gradient} />
         <img
           className="d-block "
           style={mystyle}
@@ -60,7 +60,7 @@ function CarouselFadeExample() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <div style={gradient} />
+        <div style={gradient} />
         <img
           className="d-block "
           style={mystyle}

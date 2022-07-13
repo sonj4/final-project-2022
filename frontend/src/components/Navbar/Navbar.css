@@ -1,12 +1,10 @@
-
-
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.leftNav{
+.leftNav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -15,7 +13,7 @@ nav{
     min-width: 300px;
 }
 
-.rightNav{
+.rightNav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -28,10 +26,10 @@ nav{
     cursor: pointer;
 }
 
-.rightNav span:hover{
-    border:none;	
-    outline:none;
-    border-bottom:1px solid #220331;	
+.rightNav span:hover {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #220331;
     color: white;
 }
 
@@ -41,39 +39,40 @@ nav{
     cursor: pointer;
 }
 
-.input-container{
+.input-container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
-	position:relative;
-	margin-bottom:25px;
+    position: relative;
+    margin-bottom: 25px;
     width: 100%;
 }
 
-.input-container input{ 
-  border:0;
-  border-bottom: 1px solid #220331;  
-  background:transparent;
-  width: 100%;
-  padding:8px 0 5px 0;
-  font-size:16px;
-  color: rgba(255, 255, 255, 0.767);
-}
-.input-container input:focus{ 
- border:none;	
- outline:none;
- border-bottom:1px solid rgb(34, 3, 49);	
+.input-container input {
+    border: 0;
+    border-bottom: 1px solid #220331;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.767);
 }
 
+.input-container input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(34, 3, 49);
+}
 
 
-.mobileNav{
+
+.mobileNav {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(34, 3, 49) 50%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(34, 3, 49) 50%, rgba(0, 0, 0, 1) 100%);
     position: absolute;
     right: -400px;
     height: 100vh;
@@ -83,20 +82,21 @@ nav{
     transition: right 2s;
 }
 
-.logo{
-    color: #c0e8f9;
+.logo {
+    color: #ffffff;
     font-size: 1.8rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    
+
 }
 
-.mobileNav span{
+.mobileNav span {
     color: white;
     margin: 0.5rem;
 }
 
-.hidden, .mobileBar {
+.hidden,
+.mobileBar {
     display: none;
 }
 
@@ -106,7 +106,7 @@ nav{
         transition: right 2s;
     }
 
-    .rightNav{
+    .rightNav {
         display: none;
     }
 
@@ -118,7 +118,7 @@ nav{
     }
 }
 
-@media (max-width: 576px){
+@media (max-width: 576px) {
     .mobileNav {
         right: 0;
         transition: right 2s;
