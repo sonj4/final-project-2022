@@ -2,10 +2,10 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Avatar from '@mui/material/Avatar';
+import { Link } from 'react-router-dom';
 
-export default function MenuUI() {
+export default function ProfileDropdown() {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -25,8 +25,8 @@ export default function MenuUI() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-    <FontAwesomeIcon icon={faArrowAltCircleDown} className="icon" />
-        
+        <Avatar alt="Remy Sharp" src="" sx={{ width: 24, height: 24 }} />
+
       </Button>
       <Menu
         id="basic-menu"
@@ -37,9 +37,9 @@ export default function MenuUI() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Movies</MenuItem>
-        <MenuItem onClick={handleClose}>TW Shows</MenuItem>
-        <MenuItem onClick={handleClose}>Celebs</MenuItem>
+        <MenuItem onClick={handleClose}> <Link style={{ textDecoration: 'none', color: 'black'}} to='/profile/1' >Your Profile</Link > </MenuItem>
+        <Link style={{ textDecoration: 'none', color: 'black' }} to='profile/1/settings'><MenuItem onClick={handleClose}>Settings</MenuItem></Link>
+        <MenuItem onClick={handleClose}>Log Out</MenuItem>
       </Menu>
     </div>
   );

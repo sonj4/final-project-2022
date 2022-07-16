@@ -46,6 +46,8 @@ export default function Slider() {
         drag: 'free',
         gap: "20rem",
         dataSplideInterval: "1000",
+        type: "loop",
+        pauseOnHover: true,
         breakpoints: {
           1200: {
             perPage: 4,

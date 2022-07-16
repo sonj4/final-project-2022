@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.profilePicture{
+    height: 400px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.name{
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 0.5rem;
+}
+
+.username{
+    font-family: 'Roboto Mono', monospace;
+    color: #beb7a4;
+}
+
+.bio {
+    font-family: 'Montserrat', sans-serif;
+    color: #d8ddef;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.3rem;
+    
+}
+
+@media (max-width: 776px) {
+    .profileContainer{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
