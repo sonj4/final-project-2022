@@ -7,6 +7,7 @@ import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
 import Profile from './pages/Profile/Profile';
 import ProfileSettings from './pages/ProfileSettings/ProfileSettings';
+import Watchlist from './pages/Watchlist/Watchlist';
 
 function App() {
   const user = true;
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' element={user ? <Home /> : <Login />} />
           <Route path='/profile/:id' element={user ? <Profile /> : <Login />} />
           <Route path='/profile/:id/settings' element={user ? <ProfileSettings /> : <Login />} />
+          <Route path='/watchlist/:id' element={user ? <Watchlist /> : <Login />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

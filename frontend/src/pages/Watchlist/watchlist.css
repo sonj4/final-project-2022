@@ -1,0 +1,126 @@
+.watchlistContainer {
+    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    
+}
+
+.toggleButton{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.toggleButton:hover {
+    background-color: transparent;
+}
+
+.toggleIcon {
+    color: rgb(0, 0, 0);
+
+}
+
+.watchlistItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6rem 0;
+}
+
+.watchlistItemGrid{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.watchlistBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+
+
+.watchlistBar > span {
+    color: #220331;
+    margin: 1rem;
+}
+
+.watchlistBar > select {
+    margin: 0.4rem;
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #CCC;
+    background-color: #220331;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/down4-512.png") 96% / 15% no-repeat #EEE;
+}
+
+.watchlistBar > button {
+    margin: 0.4rem;
+}
+
+.watchlistImageWrapper{
+    position: relative;
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.watchlistImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.watchlistDeleteIcon{
+    z-index: 2;
+    position: absolute;
+    top: 1.1rem;
+    left: 0.1rem;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    
+    color: #511730;
+    
+}
+
+.watchlistInfoWrapper{
+    margin: 1rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
