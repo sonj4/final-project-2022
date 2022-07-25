@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import ProfileDropdown from '../ProfileDropdown';
 
 export default function Navbar() {
-  const user = true;
+  const user = false;
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = (e) => {
