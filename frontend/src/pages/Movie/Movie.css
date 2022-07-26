@@ -1,3 +1,19 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.slider button:hover {
+    background: none;
+}
+
+.rate-popup {
+    color: white;
+    background-color: rgba(167, 167, 167, 0.349);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.triger {
+    cursor: pointer;
+}
 .container{
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -5,6 +21,11 @@
     font-family: 'Poppins', sans-serif;
     color: white;
 }
+
+.gallery-button{
+    cursor: pointer;
+}
+
 .categories-x-rating {
     display: flex;
     justify-content: space-between;
@@ -66,3 +87,95 @@
     margin-right: 17%;
     color: white;
 }
+
+.container2{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    margin-left: 17%;
+    margin-right: 17%;
+    margin-top: 60px;
+    color: white;
+    column-gap: 2vw;
+}
+
+.actors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 35px;
+}
+.actors img {
+    width: 100%;
+    height: 70%;
+}
+.actor-title {
+    font-size: 2.2em;
+}
+
+.actors h2 {
+    font-size: 1.5em;
+}
+.actors h3 {
+    font-size: 1.2em;
+    font-family: 'Arial', sans-serif;
+}
+.actors button {
+    background: none;
+    color: white;
+    padding: 0;
+    text-align: left;
+    border: none;
+}
+.load-more-button {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    background-color: rgba(114, 114, 114, 0.349);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin-top: 20px;
+}
+
+.load-more-div{
+    text-align: center;
+}
+
+.gallery-modal {
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    width: 60%;
+    height: fit-content; 
+    background: none;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 0;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .close-modal {
+    position: absolute;
+     right: 0.7%;
+     top: 1.3%;
+     background: none;
+     border: none;
+     width: 50px;
+     height: 40px;
+  }
+  .close-modal:hover {
+    background: none;
+  }
+  .mymodal img {
+    width: 100%;
+    height: 100%;
+  }
