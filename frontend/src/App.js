@@ -12,7 +12,7 @@ import Movie from './pages/Movie/Movie.js';
 import Actor from './pages/Actor/Actor';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
-import axios from 'axios';
+import Register from './pages/Register/Register';
 
 function App() {
   const user = false;
@@ -24,6 +24,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={user ? <Home /> : <Login />} />
+          <Route path='/register' element={user ? <Home /> : <Register />} />
           <Route path='/profile/:id' element={user ? <Profile /> : <Login />} />
           <Route path='/profile/:id/settings' element={user ? <ProfileSettings /> : <Login />} />
           <Route path='/watchlist/:id' element={user ? <Watchlist /> : <Login />} />

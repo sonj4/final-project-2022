@@ -28,8 +28,9 @@ export default function Navbar() {
       <div className="rightNav">
         <Link to={user ? 'watchlist/1' : 'login'} style={{ textDecoration: 'none' }}><span>WATCHLIST</span></Link>
         <Link to='/about' style={{ textDecoration: 'none' }}><span>ABOUT</span></Link>
-        <Link to='contact' style={{ textDecoration: 'none' }}><span>CONTACT</span></Link>
+        <Link to='/contact' style={{ textDecoration: 'none' }}><span>CONTACT</span></Link>
         {user?<></>:<Link to='/login' style={{ textDecoration: 'none' }}><span>LOG IN</span></Link> }
+        {user?<></>:<Link to='/register' style={{ textDecoration: 'none' }}><span>SIGN UP</span></Link> }
         {user ? <ProfileDropdown /> : <></>}
         
       </div>
@@ -39,6 +40,7 @@ export default function Navbar() {
         <span>WATCHLIST</span>
         <span>ABOUT</span>
         {user?<></>:<Link to='/login' style={{ textDecoration: 'none' }}><span>LOG IN</span></Link> }
+        {user?<></>:<Link to='/register' style={{ textDecoration: 'none' }}><span>SIGN UP</span></Link> }
         {user ? <ProfileDropdown /> : <></>}
       </div>
 
