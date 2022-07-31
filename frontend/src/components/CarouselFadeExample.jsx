@@ -1,3 +1,4 @@
+import { fontSize } from '@mui/system';
 import Carousel from 'react-bootstrap/Carousel';
 
 function CarouselFadeExample() {
@@ -10,7 +11,16 @@ function CarouselFadeExample() {
   const titleStyle = {
     color: "white",
     fontFamily: "'Poppins', sans-serif",
-    zIndex: "4"
+    zIndex: "4",
+    fontSize: "1rem",
+    margin: "0",
+    padding: "0"
+  }
+
+  const subtitleStyle = {
+    fontSize: "0.4rem",
+    margin: "0",
+    padding: "0"
   }
 
   const carouselStyle = {
@@ -20,6 +30,7 @@ function CarouselFadeExample() {
     WebkitBoxShadow: "-1px 1px 34px 9px rgba(0,0,0,0.75)",
     MozBoxShadow: "-1px 1px 34px 9px rgba(0,0,0,0.75)"
   }
+
 
   const gradient = {
     zIndex: "3",
@@ -32,7 +43,7 @@ function CarouselFadeExample() {
   return (
     <Carousel fade style={carouselStyle}>
       <Carousel.Item>
-        <div style={gradient} />
+        {/* <div style={gradient} /> */}
         <img
           className="d-block "
           style={mystyle}
@@ -40,13 +51,13 @@ function CarouselFadeExample() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h2>Peaky Blinders</h2>
-          <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <p style={titleStyle}>Peaky Blinders</p>
+          <p style={subtitleStyle}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
 
       </Carousel.Item>
       <Carousel.Item>
-        <div style={gradient} />
+        {/* <div style={gradient} /> */}
         <img
           className="d-block "
           style={mystyle}
@@ -55,12 +66,12 @@ function CarouselFadeExample() {
         />
 
         <Carousel.Caption>
-          <h2 style={titleStyle}>Stranger Things</h2>
-          <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p style={titleStyle}>Stranger Things</p>
+          <p style={subtitleStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <div style={gradient} />
+        {/* <div style={gradient} /> */}
         <img
           className="d-block "
           style={mystyle}
@@ -69,8 +80,8 @@ function CarouselFadeExample() {
         />
 
         <Carousel.Caption>
-          <h2>Squid Game</h2>
-          <p >
+          <p style={titleStyle}>Squid Game</p>
+          <p style={subtitleStyle}>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
         </Carousel.Caption>
