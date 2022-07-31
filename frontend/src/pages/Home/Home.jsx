@@ -8,8 +8,8 @@ import axios from '../../axios';
 const MOVIE_URL = '/movie/movie';
 
 export default function Home() {
-  axios.get('/movie/movie').then(response => console.log('test', response))
-  const [movies, setMovies] = useState([]);
+  //axios.get('/movie/movie').then(response => console.log('test', response))
+ // const [movies, setMovies] = useState([]);
 
 //   const { response, loading, error } = useAxios({
 //     method: 'GET',
