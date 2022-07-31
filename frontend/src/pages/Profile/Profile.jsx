@@ -15,9 +15,10 @@ export default function Profile() {
         </div>
       </div>
       <div className="myWatchlist">
-        <p className='watchlist'>My Watchlist:</p>
-        <Slider />
-        <MovieCard />
+        
+        <Slider prop="My Watchlist:"/>
+        <Slider prop="My Ratings:"/>
+        {/* <MovieCard /> */}
       </div>
     </div>
 

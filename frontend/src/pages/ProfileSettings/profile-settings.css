@@ -50,11 +50,20 @@ input[type="file"] {
     border: none;
     border-bottom: 1px solid rgb(217, 217, 217);
     color: white;
-    width: 100%;
+    width: 200px;
     padding: 0.5rem 0.2rem;
 }
 
 .textForm > label {
     color: rgb(217, 217, 217);
     margin: 0.3rem 0;
+}
+
+@media (max-width: 768px){
+    .profileSettingsForm{
+        flex-direction: column;
+    }
+    .profileEditIcons{
+        margin:0;
+    }
 }

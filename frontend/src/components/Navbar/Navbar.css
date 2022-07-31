@@ -80,6 +80,7 @@ nav {
     z-index: 10;
     top: 0;
     transition: right 2s;
+    overflow-y: hidden;
 }
 
 .logo {

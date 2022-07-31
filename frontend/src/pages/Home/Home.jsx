@@ -27,8 +27,8 @@ export default function Home() {
   return (
     <div className='home'>
       <CarouselFadeExample />
-      <Slider key={1} />
-      <Slider key={2} />
+      <Slider key={1} prop="Popular movies:"/>
+      <Slider key={2} prop="Recent movies:"/>
     </div>
   )
 }

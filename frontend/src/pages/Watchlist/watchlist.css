@@ -124,3 +124,44 @@
     align-items: center;
     align-content: center;
 }
+
+@media (max-width: 476px) {
+    .grid { 
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media(min-width:477px) and (max-width: 768px){
+    .grid { 
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width:769px) and (max-width: 992px){
+    .grid { 
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(min-width:993px) and (max-width: 1200px){
+    .grid { 
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(min-width:1201px) {
+    .grid { 
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .watchlistItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .watchlistBar {
+        flex-direction: column;
+    }
+}

@@ -3,7 +3,8 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import './slider.css'
 
-export default function Slider() {
+export default function Slider({prop}) {
+  console.log(prop)
   const popular = [
     {
       id: "0",
@@ -38,7 +39,7 @@ export default function Slider() {
   return (
 
     <div className='wrapper'>
-      <h3 className='popularTitle'>Popular movies:</h3>
+      <h3 className='popularTitle'>{prop}</h3>
       <Splide options={{
         perPage: 6,
         arrows: false,

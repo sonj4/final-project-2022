@@ -8,8 +8,11 @@ import { Link } from 'react-router-dom';
 import ProfileDropdown from '../ProfileDropdown';
 
 export default function Navbar() {
-  const user = false;
+  const user = true;
   const [isClicked, setIsClicked] = useState(false);
+  const [isLinkClicked, setIsLinkClicked] = useState(false);
+  const classNameMobileOpen = "mobileNav";
+  const classNameMobileClosed = "mobileNav hidden";
 
   const handleClick = (e) => {
     setIsClicked(prevState => !prevState);
@@ -35,12 +38,14 @@ export default function Navbar() {
         
       </div>
       <FontAwesomeIcon icon={faBars} className="mobileBar hidden" onClick={(e) => handleClick(e)} />
-      <div className={isClicked ? "mobileNav animate__backOutLeft" : "mobileNav hidden animate__backOutLeft"}>
+      <div className={isClicked ? classNameMobileOpen : classNameMobileClosed}>
         <FontAwesomeIcon icon={faClose} className="icon" onClick={(e) => handleClick(e)} />
-        <span>WATCHLIST</span>
-        <span>ABOUT</span>
-        {user?<></>:<Link to='/login' style={{ textDecoration: 'none' }}><span>LOG IN</span></Link> }
-        {user?<></>:<Link to='/register' style={{ textDecoration: 'none' }}><span>SIGN UP</span></Link> }
+        {user ? <Link style={{ textDecoration: 'none' }} to='watchlist/1'> <span onClick={e => setIsLinkClicked(prev => !prev)}>WATCHLIST</span> </Link> : <Link to='/login' style={{ textDecoration: 'none' }}> <span onClick={e => setIsLinkClicked(prev => !prev)}>WATCHLIST</span> </Link> }
+        <Link to='about' style={{ textDecoration: 'none' }}> <span onClick={e => setIsLinkClicked(prev => !prev)}>ABOUT</span></Link>
+        <Link to='contact' style={{ textDecoration: 'none' }}> <span onClick={e => setIsLinkClicked(prev => !prev)}>CONTACT</span></Link>
+        
+        {user?<></>:<Link to='/login' style={{ textDecoration: 'none' }}><span onClick={e => setIsLinkClicked(prev => !prev)}>LOG IN</span></Link> }
+        {user?<></>:<Link to='/register' style={{ textDecoration: 'none' }}><span onClick={e => setIsLinkClicked(prev => !prev)}>SIGN UP</span></Link> }
         {user ? <ProfileDropdown /> : <></>}
       </div>
 

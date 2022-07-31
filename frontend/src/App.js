@@ -15,7 +15,7 @@ import Contact from './pages/Contact/Contact';
 import Register from './pages/Register/Register';
 
 function App() {
-  const user = false;
+  const user = true;
  
   return (
     <div className="App">

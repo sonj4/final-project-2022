@@ -19,7 +19,7 @@ export default function ProfileSettings() {
         <div className="textForm">
 
           <label htmlFor="name">Name:</label>
-          <input className='editInput' type="text" id='name' />
+          <input className='editInput' type="text" id='name' style={{width:"200px"}}/>
           <label htmlFor="surname">Surname:</label>
           <input className='editInput' type="text" id='surname' />
           <label htmlFor="username">Username:</label>
