@@ -1,0 +1,66 @@
+.actorPageContainer {
+    display: flex;
+flex-direction: column;
+    justify-content: center;
+
+    align-content: center;
+}
+.actorImageDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (max-width: 576px){
+    .actorImageDiv{
+        flex-direction: column;
+    }
+}
+
+.actorInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.actorInfo > span {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.actorFilmographyList{
+    margin: 5% 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+/* }776, 576, 992 */
+
+@media (min-width: 1440px) {
+    .actorFilmographyList{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .actorFilmographyList{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 776px) {
+    .actorFilmographyList{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .actorFilmographyList{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 376px) {
+    .actorFilmographyList{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

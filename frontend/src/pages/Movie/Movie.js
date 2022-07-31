@@ -62,7 +62,7 @@ function Movie() {
       ];
 
     return ( <div>
-        <div className='container'>
+        <div className='moviePageContainer'>
         
             <img className='gallery-button' src='https://m.media-amazon.com/images/M/MV5BMThlOWE3MWEtZjM4Ny00M2FiLTkyMmYtZGY3ZTcyMzM5YmNlXkEyXkFqcGdeQWpnYW1i._V1_.jpg' alt='image' onClick={toggleModal}/>
             
@@ -117,7 +117,7 @@ function Movie() {
                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
 
-        <div className='container2'>
+        <div className='moviePageContainer2'>
             <div>
                 <h1 className='actor-title'>Actors</h1>
                 <div className='actors'>

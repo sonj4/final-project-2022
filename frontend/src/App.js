@@ -9,9 +9,14 @@ import Profile from './pages/Profile/Profile';
 import ProfileSettings from './pages/ProfileSettings/ProfileSettings';
 import Watchlist from './pages/Watchlist/Watchlist';
 import Movie from './pages/Movie/Movie.js';
+import Actor from './pages/Actor/Actor';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import axios from 'axios';
 
 function App() {
-  const user = true;
+  const user = false;
+ 
   return (
     <div className="App">
       <BrowserRouter>
@@ -22,7 +27,10 @@ function App() {
           <Route path='/profile/:id' element={user ? <Profile /> : <Login />} />
           <Route path='/profile/:id/settings' element={user ? <ProfileSettings /> : <Login />} />
           <Route path='/watchlist/:id' element={user ? <Watchlist /> : <Login />} />
-          <Route path='/movie' element={<Movie />} />
+          <Route path='/movie/:id' element={<Movie />} />
+          <Route path='/actor/:id' element={<Actor />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

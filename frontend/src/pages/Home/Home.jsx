@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div className='home'>
       <CarouselFadeExample />
-      <Slider />
-      <Slider />
+      <Slider key={1}/>
+      <Slider key={2}/>
     </div>
   )
 }

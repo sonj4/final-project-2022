@@ -17,8 +17,8 @@ function CarouselFadeExample() {
     height: "70%",
     width: "70%",
     boxShadow: "-1px 1px 34px 9px rgba(0,0,0,0.75)",
-    webkitBoxShadow: "-1px 1px 34px 9px rgba(0,0,0,0.75)",
-    mozBoxShadow: "-1px 1px 34px 9px rgba(0,0,0,0.75)"
+    WebkitBoxShadow: "-1px 1px 34px 9px rgba(0,0,0,0.75)",
+    MozBoxShadow: "-1px 1px 34px 9px rgba(0,0,0,0.75)"
   }
 
   const gradient = {

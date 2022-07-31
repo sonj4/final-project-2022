@@ -26,9 +26,9 @@ export default function Navbar() {
         </div>
       </div>
       <div className="rightNav">
-        <span>WATCHLIST</span>
-        <span>ABOUT</span>
-        <span>CONTACT</span>
+        <Link to={user ? 'watchlist/1' : 'login'} style={{ textDecoration: 'none' }}><span>WATCHLIST</span></Link>
+        <Link to='/about' style={{ textDecoration: 'none' }}><span>ABOUT</span></Link>
+        <Link to='contact' style={{ textDecoration: 'none' }}><span>CONTACT</span></Link>
         {user?<></>:<Link to='/login' style={{ textDecoration: 'none' }}><span>LOG IN</span></Link> }
         {user ? <ProfileDropdown /> : <></>}
         
