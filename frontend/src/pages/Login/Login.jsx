@@ -25,11 +25,7 @@ export default function Register() {
 
   const [errMsg, setErrMsg] = useState('');
   const [success, setSuccess] = useState(false);
-
-
-
-
-
+  
   useEffect(() => {
     setValidPwd(PWD_REGEX.test(pwd));
   }, [pwd])

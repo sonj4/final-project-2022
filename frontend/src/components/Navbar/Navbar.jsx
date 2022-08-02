@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faBars, faImagePortrait, faClose } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css';
-import MenuUI from '../MenuUI';
-import Avatar from '@mui/material/Avatar';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProfileDropdown from '../ProfileDropdown';
+import SearchBar from '../SearchBar/SearchBar';
+
 
 export default function Navbar() {
   const user = true;
@@ -21,12 +21,8 @@ export default function Navbar() {
   return (
     <nav>
       <div className="leftNav">
-        <div className="input-container">
-          <Link to='/' style={{ textDecoration: 'none' }}><span className='logo'>IMDB</span></Link> 
-          <MenuUI />
-          <input type="text" required="" placeholder='Search' />
-          <FontAwesomeIcon icon={faSearch} className="icon" />
-        </div>
+      <Link to='/' style={{ textDecoration: 'none' }}><span className='logo'>IMDB</span></Link> 
+      <SearchBar />
       </div>
       <div className="rightNav">
         <Link to={user ? 'watchlist/1' : 'login'} style={{ textDecoration: 'none' }}><span>WATCHLIST</span></Link>

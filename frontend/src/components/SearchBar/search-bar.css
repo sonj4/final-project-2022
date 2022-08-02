@@ -1,0 +1,88 @@
+.icon {
+    padding: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.searchMainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    position: relative;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.searchMainContainer input {
+    border: 0;
+    border-bottom: 1px solid #220331;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.767);
+}
+
+.searchMainContainer input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(34, 3, 49);
+}
+
+
+.searchBySelect {
+    outline: none;
+    border: 1px solid #220331;
+    background-color: transparent;
+    padding: 8px 0 5px 0;
+    color: white;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.searchBySelect>option {
+    background-color: black;
+    cursor: pointer;
+    padding: 8px 0 5px 0;
+}
+
+.searchBySelect>option:hover {
+    background-color: #220331;
+
+}
+
+.searchResults {
+    margin-top: 5px;
+    width: 300px;
+    height: 200px;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 3;
+    margin-left: 100px;
+}
+
+.searchResultItem {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.searchResultItem:hover  {
+    background-color: #ffffff;
+    color: #220331;
+}
+
+.searchResultItem > p:hover {
+    color: #220331;
+}
+
+.searchResults::-webkit-scrollbar {
+    display: none;
+}
