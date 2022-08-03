@@ -79,7 +79,7 @@ function Movie() {
                     <div>
                         <Popup className='rate-popup' trigger={<div className='triger'>
                             <p className='rating'>Rating</p>
-                            <p className='rating'>9/10</p></div>} flowing hoverable>
+                            <p className='rating'>9/10</p></div>} position="bottom left" flowing hoverable>
                                 <Header as='h4'>Rate</Header>
                                 <Box
                                     sx={{
@@ -98,7 +98,7 @@ function Movie() {
                     </div>
                 </div>
                 <button className='watch-trailers-link'>Watch trailers</button>
-                <h1 className='hr'>Movie title</h1>
+                <h1 className='hr movieTitle'>Movie title</h1>
                 <div className='hr creator'>
                     <p>Creator</p>
                     <p>Name of creator</p>
@@ -142,7 +142,26 @@ function Movie() {
                     <button className='load-more-button'>Load more</button>
                 </div>
             </div>
-            <div></div>
+            <div>
+                <h2>More picks</h2>
+                <div className='morePicks'>
+                    <button className='firstRow'>
+                        <img className='morePicksImg' src='https://m.media-amazon.com/images/M/MV5BMThlOWE3MWEtZjM4Ny00M2FiLTkyMmYtZGY3ZTcyMzM5YmNlXkEyXkFqcGdeQWpnYW1i._V1_.jpg' alt='more'></img>
+                        <h3 className='textOverImageFirstRow'>Movie name</h3>
+                    </button>
+                    <button className='otherRows1'>
+                        <img className='morePicksImg' src='https://m.media-amazon.com/images/M/MV5BMThlOWE3MWEtZjM4Ny00M2FiLTkyMmYtZGY3ZTcyMzM5YmNlXkEyXkFqcGdeQWpnYW1i._V1_.jpg' alt='more'></img>
+                        <h3 className='textOverImageOtherRows'>Movie name</h3>
+                    </button>
+                    <button className='otherRows2'>
+                        <img className='morePicksImg' src='https://netflixjunkie.com/wp-content/uploads/2022/06/tommy-shelby-cillian-murphy-peaky-blinders-1569234705-1140x599.jpg' alt='more'></img>
+                        <h3 className='textOverImageOtherRows'>Movie name</h3>
+                    </button>
+                </div>
+                <div className='load-more-div'>
+                    <button className='load-more-button'>Load more</button>
+                </div>
+            </div>
         </div>
     </div> );
 }
