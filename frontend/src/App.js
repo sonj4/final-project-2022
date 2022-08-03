@@ -14,9 +14,11 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Register from './pages/Register/Register';
 import Search from './pages/Search/Search';
+import axios from './axios';
 
 function App() {
   const user = false;
+  axios.get('/movie/movie').then(res => console.log(res))
  
   return (
     <div className="App">
