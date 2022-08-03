@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faClose } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function SearchBar() {
     const movieData = [{
@@ -51,6 +52,7 @@ export default function SearchBar() {
     const [wordEntered, setWordEntered] = useState("");
     const [isOnFocus, setIsOnFocus] = useState(false);
     const [searchValue, setSearchValue] = useState("");
+    let navigate = useNavigate();
 
     const handleFilter = (event) => {
         const searchWord = event.target.value;
@@ -92,7 +94,13 @@ export default function SearchBar() {
                 onFocus={() => setIsOnFocus(true)} 
                 onBlur={()=>setTimeout(() => {
                     setIsOnFocus(false)
-                }, 1000) }/>
+                }, 1000) }
+                onKeyUp = {e => {
+                    if (e.key === "Enter") {
+                        navigate('/search-results', {state: {data: filteredData}})
+                    }
+                }}
+                />
 
                 {filteredData.length === 0 ? (
                     <FontAwesomeIcon icon={faSearch} className="icon" />

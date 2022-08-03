@@ -8,7 +8,7 @@ import SearchBar from '../SearchBar/SearchBar';
 
 
 export default function Navbar() {
-  const user = true;
+  const user = false;
   const [isClicked, setIsClicked] = useState(false);
   const [isLinkClicked, setIsLinkClicked] = useState(false);
   const classNameMobileOpen = "mobileNav";

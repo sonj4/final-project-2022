@@ -2,7 +2,7 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import './slider.css'
-
+import { Link } from 'react-router-dom';
 export default function Slider({prop}) {
   console.log(prop)
   const popular = [
@@ -73,11 +73,13 @@ export default function Slider({prop}) {
         {popular.map(recipe => {
           return (
             <SplideSlide key={recipe.id}>
+              <Link to='/movie/1/'>
               <div className='card'>
                 <p className='sliderParagraph'>{recipe.title}</p>
                 <img src={recipe.image} alt={recipe.title} />
                 <div className='gradient' />
               </div>
+              </Link>
             </SplideSlide>
           )
         })}

@@ -141,11 +141,12 @@ export default function Register() {
               aria-describedby="emailnote"
               onFocus={() => setEmailFocus(true)}
               onBlur={() => setEmailFocus(false)}
+              
             />
             <p id="emailnote" className={emailFocus && !validEmail ? "instructions" : "offscreen"}>
               <FontAwesomeIcon icon={faInfoCircle} />
               <br />
-              <br />
+              
               {/* !#$% &'*+-/=?^_`{|}~  */}
               Allowed special characters: <span aria-label="exclamation mark"></span> <span aria-label="at symbol">&</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
             </p>

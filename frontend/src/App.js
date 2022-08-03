@@ -13,9 +13,10 @@ import Actor from './pages/Actor/Actor';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Register from './pages/Register/Register';
+import Search from './pages/Search/Search';
 
 function App() {
-  const user = true;
+  const user = false;
  
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
           <Route path='/actor/:id' element={<Actor />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/search-results' element={<Search />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
