@@ -3,45 +3,22 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import './slider.css'
 import { Link } from 'react-router-dom';
-export default function Slider({prop}) {
-  console.log(prop)
-  const popular = [
-    {
-      id: "0",
-      title: "Movie 1",
-      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-    },
-    {
-      id: "1", title: "Movie 1",
-      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-    },
-    {
-      id: "2", title: "Movie 1",
-      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-    },
-    {
-      id: "3", title: "Movie 1",
-      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-    },
-    {
-      id: "4", title: "Movie 1",
-      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-    },
-    {
-      id: "5", title: "Movie 1",
-      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-    },
-    {
-      id: "6", title: "Movie 1",
-      image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-    }
-  ]
+import useAxios from '../../hooks/useAxios';
+import BootstrapSpinner from '../BootstrapSpinner';
+
+
+export default function Slider({type}) {
+  let url = ''
+  if (type === "movie") url = 'movie/movie'
+  else url = 'movie/participant'
+  let { response, loading, error } = useAxios({ method: 'get', url });
+  const today = new Date();
   return (
 
     <div className='wrapper'>
-      <h3 className='popularTitle'>{prop}</h3>
+      <h3 className='popularTitle'>{type==="actor" ? "Born Today: "  + today.toDateString()  : "Movies"}</h3>
       <Splide options={{
-        perPage: 6,
+        perPage: response.length,
         arrows: false,
         pagination: false,
         drag: 'free',
@@ -49,6 +26,7 @@ export default function Slider({prop}) {
         dataSplideInterval: "1000",
         type: "loop",
         pauseOnHover: true,
+        autoplay: true,
         breakpoints: {
           1200: {
             perPage: 4,
@@ -70,17 +48,19 @@ export default function Slider({prop}) {
           }
         }
       }}>
-        {popular.map(recipe => {
+        {response.map(el => {
           return (
-            <SplideSlide key={recipe.id}>
-              <Link to='/movie/1/'>
+            <>
+            {loading ? <BootstrapSpinner /> : <SplideSlide key={el.url.substr(el.url.length - 2).substr(0, 1)}>
+              <Link to={type==="movie" ? `/movie/${el.url.substr(el.url.length - 2).substr(0, 1)}` : `/actor/${el.url.substr(el.url.length - 2).substr(0, 1)}`}>
               <div className='card'>
-                <p className='sliderParagraph'>{recipe.title}</p>
-                <img src={recipe.image} alt={recipe.title} />
+                <p className='sliderParagraph'>{type==="movie" ? el.title +" id " +el.url.substr(el.url.length - 2).substr(0, 1) : el.name + el.last_name +"id " +el.url.substr(el.url.length - 2).substr(0, 1)}</p>
+                <img src={type === "actor" ? el.image_of_participant : el.image_of_movie} alt={type === "actor" ? el.name : el.title}/>
                 <div className='gradient' />
               </div>
               </Link>
-            </SplideSlide>
+            </SplideSlide>}
+            </>
           )
         })}
       </Splide>

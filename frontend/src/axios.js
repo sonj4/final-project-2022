@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: "https://djangoresttodo1.herokuapp.com/api"
+    baseURL: "https://djangoproject133.herokuapp.com/api/movie/"
 })

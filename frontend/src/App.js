@@ -18,7 +18,7 @@ import axios from './axios';
 
 function App() {
   const user = false;
-  axios.get('/movie/movie').then(res => console.log(res))
+  //axios.get('/movie/participant/').then(res => console.log(res))
  
   return (
     <div className="App">

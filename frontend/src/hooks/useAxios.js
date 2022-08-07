@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import axios from '../axios';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://djangoproject133.herokuapp.com/api/';
 
 const useAxios = (axiosParams) => {
-    const [response, setResponse] = useState(undefined);
+    const [response, setResponse] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
 
@@ -20,8 +22,10 @@ const useAxios = (axiosParams) => {
     useEffect(() => {
         fetchData(axiosParams);
     }, []); 
+    //console.log(response)
+        return { response, loading, error };
 
-    return { response, error, loading };
+    
 };
 
 export default useAxios;

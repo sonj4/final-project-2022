@@ -17,6 +17,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AddIcon from '@mui/icons-material/Add';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useParams } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
+import useAxios from '../hooks/useAxios';
+import BootstrapSpinner from './BootstrapSpinner';
 
 const darkTheme = createTheme({
   palette: {
@@ -36,56 +41,60 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function MovieCard() {
+export default function MovieCard({ url }) {
   const [expanded, setExpanded] = React.useState(false);
+
+  let { id } = useParams();
+  const { response, loading, error } = useAxios({ method: 'get', url })
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  return (
-    <ThemeProvider theme={darkTheme}>
-    <Card sx={{ maxWidth: 300 }}>
-      <CardHeader
-        // action={
-        //   // <IconButton aria-label="settings">
-        //   //   <MoreVertIcon />
-        //   // </IconButton>
-        // }
-        title="Interstellar"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://images.pexels.com/photos/3876332/pexels-photo-3876332.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <StarIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <AddIcon /> <span style={{fontSize: "1rem"}}>Watchlist</span>
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          
-        </ExpandMore>
-      </CardActions>
+  return (<>
+    {loading? <BootstrapSpinner /> : <ThemeProvider theme={darkTheme}>
+      <Card sx={{ maxWidth: 300 }}>
+        <CardHeader
+          // action={
+          //   // <IconButton aria-label="settings">
+          //   //   <MoreVertIcon />
+          //   // </IconButton>
+          // }
+          title={response.title}
+          subheader={response.date_of_release}
+        />
+        <Link to={`/movie/${url.substr(url.length - 2).substr(0, 1)}`}>
+        <CardMedia
+          component="img"
+          height="194"
+          image={response.image_of_movie}
+          alt="Movie image"
+        />
+        </Link>
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {response.description}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <StarIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <AddIcon /> <span style={{ fontSize: "1rem" }}>Watchlist</span>
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
 
-    </Card>
-    </ThemeProvider>
+          </ExpandMore>
+        </CardActions>
+
+      </Card>
+    </ThemeProvider>}
+    </>
   );
 }

@@ -9,6 +9,8 @@ flex-direction: column;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    height: 50vh;
 }
 
 @media (max-width: 576px){
