@@ -10,7 +10,9 @@ import { useParams } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
 import BootstrapSpinner from '../../components/BootstrapSpinner';
 import ModalVideo from 'react-modal-video'
-import axios from 'axios';
+import MovieActors from '../../components/Actors/MovieActors';
+import Tag from '../../components/Tag';
+
 
 Modal.setAppElement("#root");
 
@@ -27,19 +29,7 @@ function Movie() {
         setIsOpen(!isOpen);
     }
 
-    const { response, loading, error } = useAxios({ method: 'get', url: `/api/movie/movie/${id}` })
-    
-
-    //  useEffect(() => {
-    //     if (response) {
-    //         console.log(response.Tag.length)
-    //      // axios.get(response.Tag[0]).then(res => setTags([...tags,res.data]))
-    //     //  axios.get(response.Tag[1]).then(res => setTags([...tags,res.data]))
-    //     }
-    //  }, [response])
-
-
-
+    const { response, loading, error } = useAxios({ method: 'get', url: `api/movie/movie/${id}` })
 
     const images = [
         {
@@ -55,7 +45,7 @@ function Movie() {
             {loading ? <BootstrapSpinner /> : <div>
                 <div className='moviePageContainer'>
                     <div className="movieImageContainer" >
-                        <img className='gallery-button' src={response.image_of_movie} alt='image' onClick={toggleModal} style={{width:"100%", height: "100%", objectFit:"contain"}}/>
+                        <img className='gallery-button' src={response.image_of_movie} alt='image' onClick={toggleModal} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                     </div>
                     <Modal isOpen={isOpen} onRequestClose={toggleModal} className="gallery-modal" overlayClassName="modal-overlay">
                         <ImageGallery items={images} style={{ all: 'unset' }} />
@@ -64,11 +54,9 @@ function Movie() {
                     <div>
                         <div className='categories-x-rating'>
                             <div className='categories'>
-                                {
-                                    tags.map(el => {
-                                        return <button>{el.name}</button>
-                                    })
-                                }
+                                {response.Tag.map(el => {
+                                    return <Tag url={el} />
+                                })}
 
 
                             </div>
@@ -94,7 +82,7 @@ function Movie() {
                             </div>
                         </div>
                         <button className='watch-trailers-link' onClick={(e) => setIsOpenModalVideo(true)}>Watch trailer</button>
-                        <ModalVideo channel='custom'  isOpen={isOpenModalVideo}  onClose={() => setIsOpenModalVideo(false)} url={response.video_of_movie}/>
+                        <ModalVideo channel='custom' isOpen={isOpenModalVideo} onClose={() => setIsOpenModalVideo(false)} url={response.video_of_movie} />
                         <h1 className='hr movieTitle'>{response.title}</h1>
                         <div className='hr creator'>
                             <p>Director</p>
@@ -110,31 +98,17 @@ function Movie() {
                     <h2>About</h2>
                     <p>{response.description}.</p>
                 </div>
-
                 <div className='moviePageContainer2'>
                     <div>
                         <h1 className='actor-title'>Actors</h1>
                         <div className='actors'>
-                            <button>
-                                <img src='https://netflixjunkie.com/wp-content/uploads/2022/06/tommy-shelby-cillian-murphy-peaky-blinders-1569234705-1140x599.jpg' alt='actor1'></img>
-                                <h2>Actor name</h2>
-                                <h3>Act name</h3>
-                            </button>
-                            <button>
-                                <img src='https://netflixjunkie.com/wp-content/uploads/2022/06/tommy-shelby-cillian-murphy-peaky-blinders-1569234705-1140x599.jpg' alt='actor1'></img>
-                                <h2>Actor name</h2>
-                                <h3>Act name</h3>
-                            </button>
-                            <button>
-                                <img src='https://netflixjunkie.com/wp-content/uploads/2022/06/tommy-shelby-cillian-murphy-peaky-blinders-1569234705-1140x599.jpg' alt='actor1'></img>
-                                <h2>Actor name</h2>
-                                <h3>Act name</h3>
-                            </button>
-
+                           {response.actors.map(el => {
+                            return <MovieActors url={el} />
+                           } )}
                         </div>
-                        <div className='load-more-div'>
+                        {/* <div className='load-more-div'>
                             <button className='load-more-button'>Load more</button>
-                        </div>
+                        </div> */}
                     </div>
                     <div>
                         <h2>More picks</h2>

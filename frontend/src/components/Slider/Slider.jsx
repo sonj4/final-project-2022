@@ -18,7 +18,7 @@ export default function Slider({ type }) {
   return (
 
     <div className='wrapper'>
-      <h3 className='popularTitle'>{type === "actor" ? "Born Today: " + today.toDateString() : "Movies"}</h3>
+      <h3 className='popularTitle'>{type === "actor" ? "Actors: " : "Movies"}</h3>
       <Splide options={{
         perPage: 4,
         arrows: false,
