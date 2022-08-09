@@ -3,3 +3,12 @@
 a {
     text-decoration: none;
 }
+
+.read-or-hide{
+    color: rgb(192,192,192);
+    cursor: pointer;
+  }
+
+  .readMoreText{
+    color: white;
+  }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://djangoproject133.herokuapp.com/api/';
+axios.defaults.baseURL = 'https://djangoproject133.herokuapp.com/';
 
 const useAxios = (axiosParams) => {
     const [response, setResponse] = useState([]);

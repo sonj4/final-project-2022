@@ -24,6 +24,11 @@
     margin: 2% 10%;
 }
 
+.movieImageContainer{
+    width: 500px;
+    height: 300px;
+}
+
 .gallery-button{
     cursor: pointer;
 }

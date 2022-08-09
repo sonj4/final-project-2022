@@ -44,8 +44,8 @@ const ExpandMore = styled((props) => {
 export default function MovieCard({ url }) {
   const [expanded, setExpanded] = React.useState(false);
 
-  let { id } = useParams();
   const { response, loading, error } = useAxios({ method: 'get', url })
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);

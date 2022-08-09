@@ -1,8 +1,11 @@
 import CarouselFadeExample from '../../components/CarouselFadeExample';
 import Slider from '../../components/Slider/Slider';
 import './Home.css';
+import axios from 'axios';
 
 export default function Home() {
+  
+
   return (
     <div className='home'>
       <CarouselFadeExample /> 
