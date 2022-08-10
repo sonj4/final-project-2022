@@ -26,7 +26,7 @@ import BootstrapSpinner from './BootstrapSpinner';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
-  },
+  }
 });
 
 
@@ -45,40 +45,38 @@ export default function MovieCard({ url }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const { response, loading, error } = useAxios({ method: 'get', url })
-
-
+  let date = new Date(response.date_of_release);
+  date = date.toDateString();
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (<>
-    {loading? <BootstrapSpinner /> : <ThemeProvider theme={darkTheme}>
-      <Card sx={{ maxWidth: 300 }}>
+    {loading ? <BootstrapSpinner /> : <ThemeProvider theme={darkTheme}>
+      <Card sx={{ maxWidth: 300 ,bgcolor: 'black', m: 1 }}>
         <CardHeader
-          // action={
-          //   // <IconButton aria-label="settings">
-          //   //   <MoreVertIcon />
-          //   // </IconButton>
-          // }
+        sx={{color: '#f2ff49' }}
           title={response.title}
-          subheader={response.date_of_release}
+          subheader={date}
         />
         <Link to={`/movie/${url.substr(url.length - 2).substr(0, 1)}`}>
-        <CardMedia
-          component="img"
-          height="194"
-          image={response.image_of_movie}
-          alt="Movie image"
-        />
+          <CardMedia
+          sx={{ width: '100%', height: 300, objectFit: 'contain' }}
+            component="img"
+            height="300"
+            objectFit="contain"
+            image={response.image_of_movie}
+            alt="Movie image"
+          />
         </Link>
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            {response.description}
+            {response.description.slice(0, 70) + "..."}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
-            <StarIcon />
+            <StarIcon sx={{color: '#f2ff49' }}/>
           </IconButton>
           <IconButton aria-label="share">
             <AddIcon /> <span style={{ fontSize: "1rem" }}>Watchlist</span>
@@ -95,6 +93,6 @@ export default function MovieCard({ url }) {
 
       </Card>
     </ThemeProvider>}
-    </>
+  </>
   );
 }

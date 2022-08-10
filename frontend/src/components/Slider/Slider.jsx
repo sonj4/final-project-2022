@@ -50,6 +50,7 @@ export default function Slider({ type }) {
           }
         }
       }}>
+        
         {response.map(el => {
       
           return (

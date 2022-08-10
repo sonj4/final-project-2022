@@ -150,4 +150,7 @@ nav {
         transition: right 2s;
         min-width: 100vw;
     }
+    .logo{
+        display: none;
+    }
 }

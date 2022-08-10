@@ -15,6 +15,7 @@ import Contact from './pages/Contact/Contact';
 import Register from './pages/Register/Register';
 import Search from './pages/Search/Search';
 import axios from './axios';
+import AddMovie from './pages/AddMovie/AddMovie';
 
 function App() {
   const user = false;
@@ -36,6 +37,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/search-results' element={<Search />} />
+          <Route path='/post-movie' element={<AddMovie />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
