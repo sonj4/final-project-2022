@@ -18,6 +18,7 @@ export default function Actor() {
 
         <>
             {loading ? <BootstrapSpinner /> :
+            <> 
                 <div className='actorPageContainer'>
                     <div className="actorInfo">
                         <span style={{ fontSize: "2rem", fontFamily: "'Montserrat', sans-serif", color: "#fffffc" }}>{response.name + " " + response.last_name}</span>
@@ -27,15 +28,15 @@ export default function Actor() {
                     <div className="actorImageContainer">
                         <img className='actorImage' src={response.image_of_participant} alt="actor image" />
                     </div>
-                    <div className="actorFilmographyList">
-                        <div className="nmgVise">
-                            {response.Movie.map(el => {
-                                return <MovieCard url={el} />
-                            })}
-                        </div>
-
-                    </div>
                 </div>
+                <div className="actorFilmographyList">
+
+                    {response.Movie.map(el => {
+                        return <MovieCard url={el} />
+                    })}
+
+            </div>
+            </>
             }
         </>
     )

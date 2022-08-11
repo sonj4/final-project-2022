@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './readmore.css'
 export default function ReadMore({ children })  {
     const text = children;
     const [isReadMore, setIsReadMore] = useState(true);
