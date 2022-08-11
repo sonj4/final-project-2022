@@ -12,7 +12,7 @@ export default function ProfileSettings() {
       <form className='profileSettingsForm'>
         <div className="imgEdit">
           <img className='profilePictureSettings' src="https://images.pexels.com/photos/12640456/pexels-photo-12640456.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" />
-          <label htmlFor="imgInput"><EditIcon className='profileEditIcons' /> <input type="file" name="imgInput" id="imgInput" /></label>
+          <label htmlFor="imgInput" style={{margin: "0"}}><EditIcon className='profileEditIcons' /> <input type="file" name="imgInput" id="imgInput" /></label>
           <DeleteIcon className='profileEditIcons' />
 
         </div>

@@ -18,7 +18,7 @@ import axios from './axios';
 import AddMovie from './pages/AddMovie/AddMovie';
 
 function App() {
-  const user = false;
+  const user = true;
   //axios.get('/movie/participant/').then(res => console.log(res))
  
   return (
