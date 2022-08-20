@@ -135,7 +135,7 @@ export default function Watchlist() {
                                 <img className='watchlistImage' src="https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY215_CR2%2C0%2C145%2C215_AL_.jpg" alt="" />
                             </div>
                             <div className="watchlistInfoWrapper">
-                                <span style={{ color: "#511730", fontSize: "1.3rem",letterSpacing: "0.2rem" }}>{movie.title}</span>
+                                <span style={{ color: "#a0a4b8", fontSize: "1.3rem",letterSpacing: "0.2rem" }}>{movie.title}</span>
                                 <div className="watchlistSa">
                                     <span style={{ color: "#beb7a4", fontSize: "0.7rem", fontFamily: "'Roboto Mono', monospace" }}>{movie.year} |</span>
                                     <span style={{ color: "#beb7a4", fontSize: "0.7rem", fontFamily: "'Roboto Mono', monospace" }}> {movie.duration} |</span>
