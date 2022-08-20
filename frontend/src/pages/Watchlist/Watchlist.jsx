@@ -113,9 +113,9 @@ export default function Watchlist() {
         <div className='watchlistContainer'>
             <div className="watchlistBar">
 
-                <span style={{ color: "#320a28", fontSize: "1.3rem", letterSpacing: "0.3rem" }}> YOUR WATCHLIST </span>
+                <span style={{ color: "#fffffc", fontSize: "1.3rem", letterSpacing: "0.4rem" }}> YOUR WATCHLIST </span>
 
-                <span>Sort by: </span>
+                <span style={{ color: "#f2ff49",letterSpacing: "0.3rem"}}>SORT BY </span>
                 <select onChange={e => handleChange(e)}>
                     <option value="aplhabetical">Alphabetical</option>
                     <option value="imdbRating">IMDb rating</option>
@@ -135,15 +135,15 @@ export default function Watchlist() {
                                 <img className='watchlistImage' src="https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY215_CR2%2C0%2C145%2C215_AL_.jpg" alt="" />
                             </div>
                             <div className="watchlistInfoWrapper">
-                                <span style={{ color: "#511730", fontSize: "1.3rem" }}>{movie.title}</span>
+                                <span style={{ color: "#511730", fontSize: "1.3rem",letterSpacing: "0.2rem" }}>{movie.title}</span>
                                 <div className="watchlistSa">
                                     <span style={{ color: "#beb7a4", fontSize: "0.7rem", fontFamily: "'Roboto Mono', monospace" }}>{movie.year} |</span>
                                     <span style={{ color: "#beb7a4", fontSize: "0.7rem", fontFamily: "'Roboto Mono', monospace" }}> {movie.duration} |</span>
                                     <span style={{ color: "#beb7a4", fontSize: "0.7rem", fontFamily: "'Roboto Mono', monospace" }}> {movie.genre}</span>
                                 </div>
                                 <div>
-                                    <StarIcon style={{ color: "#f2ff49" }} /> <span style={{ color: "#511730" }}>{movie.imdbRating}</span>
-                                    <StarBorderIcon style={{ color: "#f2ff49" }} /> <span style={{ color: "#511730" }}>Rate</span>
+                                    <StarIcon style={{ color: "#f2ff49" }} /> <span style={{ color: "#fffffc" }}>{movie.imdbRating}</span>
+                                    <StarBorderIcon style={{ color: "#f2ff49" }} /> <span style={{ color: "#fffffc" }}>Rate</span>
                                 </div>
                                 <div className={toggleIcon ? "" : "hidden"}>
                                     <span style={{ color: "#666a99", fontSize: "1rem" }}>{movie.director} |</span>
@@ -151,7 +151,7 @@ export default function Watchlist() {
                                     <span style={{ color: "#666a86", fontSize: "1rem" }}>{movie.actor2}</span>
                                 </div>
 
-                                <span className={toggleIcon ? "" : "hidden"} style={{ color: "black", fontSize: "0.8rem" }}>{movie.description}</span>
+                                <span className={toggleIcon ? "" : "hidden"} style={{ color: "white", fontSize: "0.8rem" }}>{movie.description}</span>
                             </div>
                             <hr />
                         </div>

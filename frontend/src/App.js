@@ -16,6 +16,7 @@ import Register from './pages/Register/Register';
 import Search from './pages/Search/Search';
 import axios from './axios';
 import AddMovie from './pages/AddMovie/AddMovie';
+import Admin from './pages/Admin/Admin';
 
 function App() {
   const user = true;
@@ -38,6 +39,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/search-results' element={<Search />} />
           <Route path='/post-movie' element={<AddMovie />} />
+          <Route path='/admin' element={<Admin />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

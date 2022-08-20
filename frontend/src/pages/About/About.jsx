@@ -19,10 +19,7 @@ export default function About() {
        <span className='aboutSpan'>19. maj 2000.</span>
        <span className='aboutSpan'>Pljevlja</span>
        <span className='aboutSpan'>PMF</span>
-       <p style={{borderBottom: "1px solid white", width:"300px"}}></p>
-       <span className='aboutSpan'>Femic Obren</span>
-       <span className='aboutSpan'>23. jul 2003.</span>
-       <span className='aboutSpan'>Bijelo Polje</span>
+       
       </div>
     </div>
   )

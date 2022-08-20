@@ -5,7 +5,9 @@
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(14,13,13,0.9724264705882353) 50%, rgba(0,0,0,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
     border-radius: 5px;
     padding: 1rem 2rem;
